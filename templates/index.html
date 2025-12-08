@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XNDRSOUND | Coming Soon</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #ffffff;
+            --accent-color: #00f2ff;
+            /* Cyan accent for tech vibe */
+            --secondary-color: #ff0055;
+            /* Magenta for music vibe */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 5rem;
+            /* Large desktop size */
+            margin: 0;
+            letter-spacing: 0.5rem;
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            font-weight: 800;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.5rem;
+            color: #888;
+            margin-top: 1rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            animation: slideUp 2s ease-in-out;
+        }
+
+        .loader {
+            margin-top: 3rem;
+            width: 50px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            overflow: hidden;
+            display: inline-block;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .loader::after {
+            content: '';
+            display: block;
+            width: 40%;
+            height: 100%;
+            background: var(--accent-color);
+            animation: loading 1.5s infinite ease-in-out;
+            transform: translateX(-100%);
+        }
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(250%);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        footer {
+            position: absolute;
+            bottom: 2rem;
+            color: #444;
+            font-size: 0.8rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+                /* Smaller for tablets/mobiles */
+                letter-spacing: 0.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                letter-spacing: 0.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+                /* Even smaller for phones */
+                letter-spacing: 0.1rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>XNDRSOUND</h1>
+        <p>Under Construction</p>
+        <div class="loader"></div>
+    </div>
+    <footer>&copy; 2025 XNDRSOUND</footer>
+</body>
+
+</html>
