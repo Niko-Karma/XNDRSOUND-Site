@@ -1,0 +1,300 @@
+/* 
+   XNDRSOUND Official Site Styles
+   Theme: Dark Premium
+   Author: Antigravity
+*/
+
+:root {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --accent-color: #ffffff;
+    --gray-text: #a0a0a0;
+    --font-main: 'Inter', sans-serif;
+    --font-display: 'Oswald', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed) ease;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Typography Utility */
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Navigation */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 2rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-item {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-bg .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    animation: fadeUp 1.5s ease-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-logo {
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid white;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: transparent;
+    transition: all var(--transition-speed) ease;
+}
+
+.cta-button:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Bio Section */
+.bio-section {
+    padding: 6rem 1.5rem;
+    background-color: #050505;
+    text-align: center;
+}
+
+.bio-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bio-text {
+    font-size: 1rem;
+    color: var(--gray-text);
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.music-embed {
+    margin-top: 2rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+    background-color: var(--bg-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns on desktop */
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 1;
+    /* Square images */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.main-footer {
+    padding: 4rem 1.5rem;
+    text-align: center;
+    background-color: #050505;
+    border-top: 1px solid #111;
+}
+
+.social-links {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+.social-links a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.contact-text {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+}
+
+.contact-text a {
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    color: #444;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .artist-title {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Add a hamburger menu later if needed, but for now simple hidden or stacked */
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-item {
+        font-size: 0.7rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
+
+    .hero-logo {
+        width: 70%;
+        /* Adjust logo size for mobile */
+    }
+}

@@ -4,129 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XNDRSOUND | Loading</title>
-    <style>
-        /* Modern Reset & Base */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #050505;
-            /* Deep black-grey */
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            overflow: hidden;
-            color: #ffffff;
-            /* Subtle texture overlay */
-            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 70%);
-        }
-
-        /* Logo Animation */
-        .logo-container {
-            width: 70%;
-            max-width: 500px;
-            margin-bottom: 4rem;
-            opacity: 0;
-            animation: fadeUi 2s ease-out forwards;
-        }
-
-        .logo-container img {
-            width: 100%;
-            height: auto;
-            /* Light drop shadow to lift it off the dark bg */
-            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.05));
-        }
-
-        /* Loader Design */
-        .loader-wrapper {
-            width: 250px;
-            text-align: center;
-            opacity: 0;
-            animation: fadeUi 2s ease-out 0.5s forwards;
-            /* Delay the UI items */
-        }
-
-        .loader-track {
-            width: 100%;
-            height: 3px;
-            background-color: #333;
-            border-radius: 3px;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-
-        .loader-bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 30%;
-            background-color: #ff3333;
-            /* Neon Red Accent */
-            background: linear-gradient(90deg, transparent, #ff3333, transparent);
-            animation: slide 2s infinite ease-in-out;
-        }
-
-        .status-text {
-            font-size: 0.75rem;
-            letter-spacing: 0.3rem;
-            text-transform: uppercase;
-            color: #888;
-            font-weight: 600;
-        }
-
-        .location-text {
-            position: absolute;
-            bottom: 2rem;
-            font-size: 0.7rem;
-            letter-spacing: 0.1rem;
-            color: #444;
-            opacity: 0;
-            animation: fadeUi 2s ease-out 1s forwards;
-        }
-
-        /* Animations */
-        @keyframes fadeUi {
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slide {
-            0% {
-                left: -30%;
-            }
-
-            100% {
-                left: 100%;
-            }
-        }
-    </style>
+    <title>XNDRSOUND | Official Artist Site</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
-    <div class="logo-container">
-        <img src="{{ url_for('static', filename='img/official_logo.png') }}" alt="XNDRSOUND">
-    </div>
+    <!-- Navigation -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-item">HOME</a></li>
+                <li><a href="#bio" class="nav-item">BIO</a></li>
+                <li><a href="#gallery" class="nav-item">LATEST</a></li>
+                <li><a href="https://open.spotify.com/artist/1jYOf2HAbguZ5zD9IKmxSS?si=Jc2g1URLStOdejd_6FztcA"
+                        target="_blank" class="nav-item">SOUND</a></li>
+                <li><a href="#contact" class="nav-item">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="loader-wrapper">
-        <div class="loader-track">
-            <div class="loader-bar"></div>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <img src="{{ url_for('static', filename='img/hero_main.jpg') }}" alt="XNDRSOUND">
+            <div class="overlay"></div>
         </div>
-        <div class="status-text">Under Construction</div>
-    </div>
+        <div class="hero-content">
+            <img src="{{ url_for('static', filename='img/official_logo.png') }}" alt="XNDRSOUND" class="hero-logo">
+            <a href="https://open.spotify.com/artist/1jYOf2HAbguZ5zD9IKmxSS" target="_blank"
+                class="cta-button">LISTEN</a>
+        </div>
+    </section>
 
-    <div class="location-text">LOS ANGELES, CA</div>
+    <!-- Bio Section -->
+    <section id="bio" class="bio-section">
+        <div class="bio-container">
+            <h2 class="section-title">THE SOUND WE CREATED</h2>
+            <p class="bio-text">
+                With melodic flows and a vulnerable pen, XNDRSOUND (also known as Xander) is an artist from Randolph, MA
+                who brings his stories of love and life through the music. Far from lonely but still searching for
+                something, Xander takes each song as an opportunity to open up. Blending elements of R&B and a dark
+                ambient hip-hop sound, Xander draws on the emotion of moody open beats to set the foundation to tell his
+                tales.
+            </p>
 
+            <div class="music-embed">
+                <!-- Spotify Embed Placeholder (User asked to remove soundcloud and use spotify links) -->
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/artist/1jYOf2HAbguZ5zD9IKmxSS?utm_source=generator&theme=0"
+                    width="100%" height="152" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="{{ url_for('static', filename='img/gallery_1.jpg') }}"
+                    alt="XNDRSOUND Gallery 1"></div>
+            <div class="gallery-item"><img src="{{ url_for('static', filename='img/gallery_2.jpg') }}"
+                    alt="XNDRSOUND Gallery 2"></div>
+            <div class="gallery-item"><img src="{{ url_for('static', filename='img/gallery_3.jpg') }}"
+                    alt="XNDRSOUND Gallery 3"></div>
+            <div class="gallery-item"><img src="{{ url_for('static', filename='img/gallery_4.jpg') }}"
+                    alt="XNDRSOUND Gallery 4"></div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="main-footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.instagram.com/xndrsound/" target="_blank" aria-label="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://open.spotify.com/artist/1jYOf2HAbguZ5zD9IKmxSS" target="_blank" aria-label="Spotify"><i
+                        class="fab fa-spotify"></i></a>
+            </div>
+            <p class="contact-text">For booking and press inquiries, please contact XNDRSOUND at <a
+                    href="mailto:2dstnt@gmail.com">2dstnt@gmail.com</a></p>
+            <p class="copyright">&copy; 2025 XNDRSOUND. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- <script src="{{ url_for('static', filename='js/gallery.js') }}"></script> -->
+    <script>
+        // Simple script for smooth scrolling or specialized interactions if needed
+        console.log("XNDRSOUND Staging Loaded");
+    </script>
 </body>
 
 </html>

@@ -17,11 +17,16 @@ with app.app_context():
 
 @app.route('/')
 def index():
-    return render_template('staging.html') # Full Dev Site (Promoted) # Minimal Splash Page
+    return render_template('index.html')
+
+@app.route('/new-drops')
+def new_drops():
+    # Route to the main page's gallery section or a specific page if/when it exists
+    return render_template('index.html') # For now, redirect to home/index
 
 @app.route('/staging')
 def staging():
-    return render_template('staging.html') # Full Dev Site
+    return render_template('staging.html')
 
 
 
