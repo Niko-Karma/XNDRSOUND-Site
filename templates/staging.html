@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XNDRSOUND | Official</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/urban.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg-dynamic {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+            url("{{ url_for('static', filename='img/hero_cover.png') }}");
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV OVERLAY (Mobile) -->
+    <div class="nav-overlay" id="nav-overlay">
+        <span class="close-btn" onclick="toggleNav()">&times;</span>
+        <a href="#hero" onclick="toggleNav()">Home</a>
+        <a href="#music" onclick="toggleNav()">Music</a>
+        <a href="#visuals" onclick="toggleNav()">Visuals</a>
+        <a href="https://www.instagram.com/xndrsound/" target="_blank">Instagram</a>
+        <a href="https://soundcloud.com/xndrsound" target="_blank">SoundCloud</a>
+        <a href="#contact" onclick="toggleNav()">Contact</a>
+    </div>
+
+    <!-- HAMBURGER BUTTON -->
+    <div class="hamburger-btn" onclick="toggleNav()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- 1. HERO SECTION (With Official Logo) -->
+    <section id="hero" class="section hero-section hero-bg-dynamic">
+        <div class="hero-logo-container">
+            <img src="{{ url_for('static', filename='img/official_logo.png') }}" alt="XNDRSOUND Official Logo"
+                class="official-logo">
+        </div>
+    </section>
+
+    <!-- 2. MUSIC SECTION (Spotify Embed) -->
+    <section id="music" class="section music-section">
+        <h2 class="section-title">LATEST DROPS</h2>
+
+        <div class="music-container">
+            <!-- Spotify Embed -->
+            <iframe data-testid="embed-iframe" style="border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);"
+                src="https://open.spotify.com/embed/artist/1jYOf2HAbguZ5zD9IKmxSS?utm_source=generator" width="100%"
+                height="352" frameborder="0" allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="streaming-links">
+            <a href="https://open.spotify.com/artist/1jYOf2HAbguZ5zD9IKmxSS" target="_blank" class="btn-stream"><i
+                    class="fab fa-spotify"></i> Spotify</a>
+            <a href="https://soundcloud.com/xndrsound" target="_blank" class="btn-stream"><i
+                    class="fab fa-soundcloud"></i> SoundCloud</a>
+            <a href="https://music.apple.com/us/artist/xndrsound/1478202336" target="_blank" class="btn-stream"><i
+                    class="fab fa-apple"></i> Apple Music</a>
+        </div>
+    </section>
+
+    <!-- 3. VISUALS SECTION (Static Grid) -->
+    <section id="visuals" class="section style-section">
+        <h2 class="section-title" style="color:var(--text-color);">VISUALS</h2>
+
+        <div class="collage-grid">
+            <!-- Uploaded Assets -->
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='img/music_section.png') }}" alt="Vibe 1">
+            </div>
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='img/style_1.png') }}" alt="Vibe 2">
+            </div>
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='img/style_2.jpg') }}" alt="Vibe 3">
+            </div>
+            <!-- Re-use one for layout balance -->
+            <div class="collage-item">
+                <img src="{{ url_for('static', filename='img/hero_cover.png') }}" alt="Vibe 4"
+                    style="filter: grayscale(100%);">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section id="contact" class="section footer-section">
+        <p style="letter-spacing: 2px; margin-bottom: 1rem;">LOS ANGELES, CA | XNDRSOUND@GMAIL.COM</p>
+        <div class="social-icons-footer">
+            <a href="https://www.instagram.com/xndrsound/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://soundcloud.com/xndrsound" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://open.spotify.com/artist/1jYOf2HAbguZ5zD9IKmxSS" target="_blank"><i
+                    class="fab fa-spotify"></i></a>
+        </div>
+        <p style="margin-top: 2rem; color: #333;">&copy; 2025 XNDRSOUND</p>
+    </section>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav-overlay');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+
+</html>

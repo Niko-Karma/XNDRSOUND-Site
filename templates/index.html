@@ -4,159 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XNDRSOUND | Coming Soon</title>
+    <title>XNDRSOUND | Loading</title>
     <style>
-        :root {
-            --bg-color: #0d0d0d;
-            --text-color: #ffffff;
-            --accent-color: #00f2ff;
-            /* Cyan accent for tech vibe */
-            --secondary-color: #ff0055;
-            /* Magenta for music vibe */
+        /* Modern Reset & Base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            min-height: 100vh;
+            background-color: #050505;
+            /* Deep black-grey */
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             overflow: hidden;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #000000 100%);
+            color: #ffffff;
+            /* Subtle texture overlay */
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #000000 70%);
         }
 
-        .container {
+        /* Logo Animation */
+        .logo-container {
+            width: 70%;
+            max-width: 500px;
+            margin-bottom: 4rem;
+            opacity: 0;
+            animation: fadeUi 2s ease-out forwards;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            /* Light drop shadow to lift it off the dark bg */
+            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.05));
+        }
+
+        /* Loader Design */
+        .loader-wrapper {
+            width: 250px;
             text-align: center;
-            z-index: 10;
-            padding: 0 20px;
+            opacity: 0;
+            animation: fadeUi 2s ease-out 0.5s forwards;
+            /* Delay the UI items */
         }
 
-        h1 {
-            font-size: 5rem;
-            /* Large desktop size */
-            margin: 0;
-            letter-spacing: 0.5rem;
-            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-transform: uppercase;
-            font-weight: 800;
-            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.3));
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        p {
-            font-size: 1.5rem;
-            color: #888;
-            margin-top: 1rem;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            animation: slideUp 2s ease-in-out;
-        }
-
-        .loader {
-            margin-top: 3rem;
-            width: 50px;
-            height: 4px;
-            background: #333;
-            border-radius: 2px;
+        .loader-track {
+            width: 100%;
+            height: 3px;
+            background-color: #333;
+            border-radius: 3px;
+            position: relative;
             overflow: hidden;
-            display: inline-block;
-            animation: fadeIn 3s ease-in-out;
+            margin-bottom: 1.5rem;
         }
 
-        .loader::after {
-            content: '';
-            display: block;
-            width: 40%;
+        .loader-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
             height: 100%;
-            background: var(--accent-color);
-            animation: loading 1.5s infinite ease-in-out;
-            transform: translateX(-100%);
+            width: 30%;
+            background-color: #ff3333;
+            /* Neon Red Accent */
+            background: linear-gradient(90deg, transparent, #ff3333, transparent);
+            animation: slide 2s infinite ease-in-out;
         }
 
-        @keyframes loading {
+        .status-text {
+            font-size: 0.75rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: #888;
+            font-weight: 600;
+        }
+
+        .location-text {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.1rem;
+            color: #444;
+            opacity: 0;
+            animation: fadeUi 2s ease-out 1s forwards;
+        }
+
+        /* Animations */
+        @keyframes fadeUi {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slide {
             0% {
-                transform: translateX(-100%);
+                left: -30%;
             }
 
             100% {
-                transform: translateX(250%);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        footer {
-            position: absolute;
-            bottom: 2rem;
-            color: #444;
-            font-size: 0.8rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-                /* Smaller for tablets/mobiles */
-                letter-spacing: 0.2rem;
-            }
-
-            p {
-                font-size: 1rem;
-                letter-spacing: 0.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.2rem;
-                /* Even smaller for phones */
-                letter-spacing: 0.1rem;
-            }
-
-            .container {
-                padding: 0 15px;
+                left: 100%;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>XNDRSOUND</h1>
-        <p>Under Construction</p>
-        <div class="loader"></div>
+
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='img/official_logo.png') }}" alt="XNDRSOUND">
     </div>
-    <footer>&copy; 2025 XNDRSOUND</footer>
+
+    <div class="loader-wrapper">
+        <div class="loader-track">
+            <div class="loader-bar"></div>
+        </div>
+        <div class="status-text">Under Construction</div>
+    </div>
+
+    <div class="location-text">LOS ANGELES, CA</div>
+
 </body>
 
 </html>

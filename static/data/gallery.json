@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "url": "https://images.unsplash.com/photo-1493225255756-d9584f8606e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "title": "Neon Nights",
+        "tags": [
+            "photoshoot",
+            "featured"
+        ],
+        "width": 1000,
+        "height": 667
+    },
+    {
+        "id": 2,
+        "url": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "title": "Vocal Booth",
+        "tags": [
+            "studio"
+        ],
+        "width": 1000,
+        "height": 1500
+    },
+    {
+        "id": 3,
+        "url": "https://images.unsplash.com/photo-1514525253440-b393452e8d26?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "title": "City Lights",
+        "tags": [
+            "aesthetic",
+            "featured"
+        ],
+        "width": 1000,
+        "height": 667
+    },
+    {
+        "id": 4,
+        "url": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "title": "Rhythm & Blues",
+        "tags": [
+            "concert"
+        ],
+        "width": 1000,
+        "height": 1000
+    },
+    {
+        "id": 5,
+        "url": "https://images.unsplash.com/photo-1516280440614-6697288d5d38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "title": "The Crew",
+        "tags": [
+            "backstage"
+        ],
+        "width": 1000,
+        "height": 667
+    },
+    {
+        "id": 6,
+        "url": "https://images.unsplash.com/photo-1501612780327-45045538702b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "title": "Dark Melodies",
+        "tags": [
+            "studio",
+            "featured"
+        ],
+        "width": 1000,
+        "height": 1500
+    }
+]

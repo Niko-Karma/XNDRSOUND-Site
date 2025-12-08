@@ -1,0 +1,213 @@
+/* Urban Collage Theme - Refined */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #ededed;
+    --neon-accent: #ff3333;
+    --warm-accent: #c2a878;
+    --font-heading: 'Anton', sans-serif;
+    --font-body: 'Roboto Mono', monospace;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* SECTIONAL LAYOUT */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+    border-bottom: 1px solid #222;
+}
+
+/* 1. HERO */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-logo-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 1rem;
+    z-index: 2;
+    text-align: center;
+}
+
+.official-logo {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. MUSIC */
+.music-section {
+    background-color: #111;
+    background-image: radial-gradient(#222 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.music-container {
+    width: 100%;
+    max-width: 600px;
+    z-index: 2;
+}
+
+.streaming-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-stream {
+    padding: 1rem 2rem;
+    border: 1px solid #444;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-stream:hover {
+    background: var(--neon-accent);
+    border-color: var(--neon-accent);
+    color: #000;
+}
+
+/* 3. VISUALS */
+.style-section {
+    background-color: var(--bg-color);
+}
+
+.collage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.collage-item {
+    aspect-ratio: 1/1;
+    background-color: #222;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #333;
+}
+
+.collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.collage-item:hover img {
+    transform: scale(1.05);
+}
+
+/* NAV OVERLAY */
+.hamburger-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: #fff;
+    z-index: 1000;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-overlay {
+    display: none;
+    /* Changed via JS to flex */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1001;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-overlay a {
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-overlay a:hover {
+    color: var(--neon-accent);
+}
+
+.close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 4rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.social-icons-footer {
+    font-size: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.social-icons-footer a {
+    color: #555;
+    transition: color 0.3s;
+}
+
+.social-icons-footer a:hover {
+    color: var(--neon-accent);
+}

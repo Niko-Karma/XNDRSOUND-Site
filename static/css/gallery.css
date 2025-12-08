@@ -1,0 +1,214 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;600;800&family=Montserrat:wght@300;400;600&display=swap');
+
+:root {
+    --bg-color: #050505;
+    /* Deep Black */
+    --text-color: #ffffff;
+    --gold-accent: #C5A065;
+    /* Elegant Gold */
+    --dark-grey: #1a1a1a;
+    --font-serif: 'Bodoni Moda', serif;
+    --font-sans: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* ====================
+   Navigation
+   ==================== */
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar a {
+    color: #888;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--gold-accent);
+}
+
+/* ====================
+   Hero Section
+   ==================== */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* subtle texture or gradient if needed */
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+}
+
+.hero-title {
+    font-family: var(--font-serif);
+    font-size: 6rem;
+    font-weight: 400;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    line-height: 1;
+    margin: 0;
+    /* Gold gradient text option */
+    background: linear-gradient(to bottom, #fff 40%, #ccc 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* color: transparent;  Uncomment for gradient text */
+}
+
+.hero-subtitle {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    color: var(--gold-accent);
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+}
+
+/* ====================
+   Section Headers
+   ==================== */
+.section-header {
+    text-align: center;
+    padding: 4rem 0 2rem;
+}
+
+.section-header h2 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin: 0;
+    letter-spacing: 0.2rem;
+}
+
+/* ====================
+   Gallery Grid (Instagram)
+   ==================== */
+.gallery-section {
+    padding: 2rem 5%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: var(--dark-grey);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    font-size: 3rem;
+    color: #fff;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+/* ====================
+   Footer
+   ==================== */
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    border-top: 1px solid #222;
+    margin-top: 4rem;
+    font-size: 0.8rem;
+    color: #666;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.social-icons {
+    margin-bottom: 1.5rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--gold-accent);
+}
+
+/* ====================
+   Mobile
+   ==================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .navbar {
+        display: none;
+        /* Add hamburger later */
+    }
+}
