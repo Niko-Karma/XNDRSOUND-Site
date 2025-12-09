@@ -8,7 +8,8 @@
     --bg-color: #000000;
     --text-color: #ffffff;
     --accent-color: #ffffff;
-    --gray-text: #a0a0a0;
+    --gray-text: #CCCCCC;
+    /* QA-04 Legibility */
     --font-main: 'Inter', sans-serif;
     --font-display: 'Oswald', sans-serif;
     --transition-speed: 0.3s;
@@ -63,6 +64,14 @@ img {
     width: 100%;
     z-index: 1000;
     padding: 2rem 0;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* QA-01 Glassmorphism */
+.main-header.scrolled {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
 }
 
 .nav-container {
@@ -273,15 +282,11 @@ img {
     }
 
     .nav-links {
-        display: none;
-        /* Add a hamburger menu later if needed, but for now simple hidden or stacked */
-    }
-
-    .nav-links {
         display: flex;
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
+        padding-top: 1rem;
     }
 
     .nav-item {

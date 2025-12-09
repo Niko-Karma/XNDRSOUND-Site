@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <div id="noise-overlay"></div>
 
     <!-- Navigation -->
     <header class="main-header">
@@ -87,10 +88,8 @@
     <footer id="contact" class="main-footer">
         <div class="footer-content">
             <!-- Mailing List CTA -->
-            <a href="https://symphony.to/xndrsound/bio" target="_blank"
-                style="color: #fff; border: 1px solid #444; padding: 0.5rem 1rem; margin-bottom: 2rem; text-decoration: none; font-family: 'Roboto Mono', monospace; display: inline-block; transition: all 0.3s;"
-                onmouseover="this.style.borderColor='#ff3333'; this.style.color='#ff3333'"
-                onmouseout="this.style.borderColor='#444'; this.style.color='#fff'">JOIN MAILING LIST</a>
+            <a href="https://symphony.to/xndrsound/bio" target="_blank" class="btn-neon"
+                style="margin-bottom: 2rem;">JOIN MAILING LIST</a>
 
             <div class="social-links">
                 <a href="https://www.instagram.com/xndrsound/" target="_blank" aria-label="Instagram"><i
@@ -115,8 +114,22 @@
     <!-- Scripts -->
     <!-- <script src="{{ url_for('static', filename='js/gallery.js') }}"></script> -->
     <script>
-        // Simple script for smooth scrolling or specialized interactions if needed
-        console.log("XNDRSOUND Staging Loaded");
+        // QA-01: Glass Nav
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            // QA-02: Parallax Hero
+            const heroLogo = document.querySelector('.hero-logo');
+            const scrollPos = window.scrollY;
+            if (scrollPos < 800) { // Optimize: only calculate when visible
+                heroLogo.style.transform = `translateY(${scrollPos * 0.4}px)`;
+            }
+        });
     </script>
 </body>
 
