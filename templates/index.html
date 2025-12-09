@@ -27,6 +27,7 @@
                 <li><a href="#gallery" class="nav-item">LATEST</a></li>
                 <li><a href="https://open.spotify.com/artist/1jYOf2HAbguZ5zD9IKmxSS?si=Jc2g1URLStOdejd_6FztcA"
                         target="_blank" class="nav-item">SOUND</a></li>
+                <li><a href="https://symphony.to/xndrsound/bio" target="_blank" class="nav-item">MAILING LIST</a></li>
                 <li><a href="#contact" class="nav-item">CONTACT</a></li>
             </ul>
         </nav>
@@ -85,6 +86,12 @@
     <!-- Footer / Contact -->
     <footer id="contact" class="main-footer">
         <div class="footer-content">
+            <!-- Mailing List CTA -->
+            <a href="https://symphony.to/xndrsound/bio" target="_blank"
+                style="color: #fff; border: 1px solid #444; padding: 0.5rem 1rem; margin-bottom: 2rem; text-decoration: none; font-family: 'Roboto Mono', monospace; display: inline-block; transition: all 0.3s;"
+                onmouseover="this.style.borderColor='#ff3333'; this.style.color='#ff3333'"
+                onmouseout="this.style.borderColor='#444'; this.style.color='#fff'">JOIN MAILING LIST</a>
+
             <div class="social-links">
                 <a href="https://www.instagram.com/xndrsound/" target="_blank" aria-label="Instagram"><i
                         class="fab fa-instagram"></i></a>
@@ -94,6 +101,14 @@
             <p class="contact-text">For booking and press inquiries, please contact XNDRSOUND at <a
                     href="mailto:2dstnt@gmail.com">2dstnt@gmail.com</a></p>
             <p class="copyright">&copy; 2025 XNDRSOUND. All Rights Reserved.</p>
+
+            <!-- Clearcode Branding -->
+            <div style="margin-top: 2rem; display: flex; flex-direction: column; align-items: center; opacity: 0.7;">
+                <p style="font-size: 0.7rem; color: #666; margin-bottom: 0.5rem; letter-spacing: 1px;">WEBSITE PRESENTED
+                    BY CLEARCODE, LLC</p>
+                <img src="{{ url_for('static', filename='img/clearcode_logo.jpg') }}" alt="Clearcode Digital"
+                    style="height: 25px; width: auto; filter: grayscale(100%); opacity: 0.8;">
+            </div>
         </div>
     </footer>
 
