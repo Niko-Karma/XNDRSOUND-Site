@@ -1,5 +1,0 @@
-flask
-gunicorn
-flask-sqlalchemy
-requests
-python-dotenv
